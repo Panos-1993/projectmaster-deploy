@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Personal Project</title>
+    <style>
+      body{
+    height: 100vh;
+} 
+.container{
+    height: 100%;
+}
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('sollnnCuvLtceq03Q');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+          console.log("Load");
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+              console.log("Inside");
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                console.log("23");
+                // these IDs from the previous steps
+                emailjs.sendForm('service_2rjxdj9', 'template_ohpfuqc', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home</a>
+              <a class="nav-item nav-link" href="risk.html">Risk</a>
+              <a class="nav-item nav-link" href="liquidity.html">Liquidity</a>
+              <a class="nav-item nav-link" href="profitability.html">Profitability</a>
+              <a class="nav-item nav-link" href="activity.html">Activity</a>
+            </div>
+          </div>
+    </nav>
+  </header>
+<br>
+<main class="h-100">
+<div class="container px-4 py-5">
+  <h1>Dear Mentor</h1>
+  <p style="font-size: 18px;
+  font-weight: 600;">Financial ratios are powerful tools to help summarize financial statements and the health of a company or enterprise. Learn the most useful financial ratios here. This project is an attempt to showcase my skills in web development. This personal project will be updated regurarly as my skills grow.</p>
+<!--Section: Contact v.2-->
+<section class="mt-4 pt-4">
+
+  <!--Section heading-->
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+      a matter of hours to help you.</p>
+
+  <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+        <form id="contact-form" name="contact-form">
+          <input type="hidden" name="contact_number">
+
+          <!--Grid row-->
+          <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-6">
+                  <div class="md-form mb-0">
+                      <input type="text" id="name" name="name" class="form-control">
+                      <label for="name" class="">Your name</label>
+                  </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6">
+                  <div class="md-form mb-0">
+                      <input type="text" id="email" name="email" class="form-control">
+                      <label for="email" class="">Your email</label>
+                  </div>
+              </div>
+              <!--Grid column-->
+
+          </div>
+          <!--Grid row-->
+
+          <!--Grid row-->
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="md-form mb-0">
+                      <input type="text" id="subject" name="subject" class="form-control">
+                      <label for="subject" class="">Subject</label>
+                  </div>
+              </div>
+          </div>
+          <!--Grid row-->
+
+          <!--Grid row-->
+          <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-12">
+
+                  <div class="md-form">
+                      <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                      <label for="message">Your message</label>
+                  </div>
+
+              </div>
+          </div>
+          <!--Grid row-->
+
+          <div class="text-center text-md-left">
+            <input class="btn btn-primary" type="submit" value="Send">
+        </div>
+        <div class="status"></div>
+      </form>
+
+      </div>
+      <!--Grid column-->
+
+
+  </div>
+
+</section>
+<!--Section: Contact v.2-->
+</div>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="text-muted">© 2022 Panagiotis Lampros</span>
+    </div>
+  </footer>
+</main>
+</body>
+</html>
